@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha Clash Games</title>
+    <!-- get css link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Daisy UI and Tailwind CSS get link provide -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main
+      class="bg-[#0b0634] min-h-screen bg-[url(images/background.png)] bg-no-repeat bg-center bg-contain"
+    >
+      <!-- section HOME Screen number 01 -->
+      <section
+        id="home-screen"
+        class="flex flex-col items-center min-h-screen justify-center"
+      >
+        <div class="flex flex-col items-center">
+          <h1 class="font-normal text-8xl font-anton text-white mb-[25px]">
+            ALPHABET CLASH
+          </h1>
+          <p
+            class="text-white text-[12px] text-center font-medium font-poppins w-[380px] mb-[25px]"
+          >
+            Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+          </p>
+          <button class="btn font-bold text-xl font-poppins" onclick="play()">
+            Play Now
+          </button>
+        </div>
+      </section>
+      <!-- section Play-Ground number 02 -->
+      <section id="play-ground" class="pt-12 hidden">
+        <!-- screen -->
+        <div
+          class="artboard artboard-horizontal phone-6 border-[20px] rounded-xl border-[#010313CC] bg-[#FFFFFFB3] mx-auto text-center font-semibold text-[128px]"
+        >
+          <div class="flex justify-center">
+            <p
+              class="text-[16px] font-poppins font-medium bg-[#010313CC] text-white p-2 rounded-b-xl"
+            >
+              Don't watch keyboard while playing...
+            </p>
+          </div>
+          <p id="Display" class="uppercase">Y</p>
+        </div>
+        <!-- keyboard start -->
+        <div class="mt-8 uppercase font-semibold">
+          <div class="flex justify-center gap-1 my-1 w-full">
+            <kbd id="q" class="kbd">q</kbd>
+            <kbd id="w" class="kbd">w</kbd>
+            <kbd id="e" class="kbd">e</kbd>
+            <kbd id="r" class="kbd">r</kbd>
+            <kbd id="t" class="kbd">t</kbd>
+            <kbd id="y" class="kbd">y</kbd>
+            <kbd id="u" class="kbd">u</kbd>
+            <kbd id="i" class="kbd">i</kbd>
+            <kbd id="o" class="kbd">o</kbd>
+            <kbd id="p" class="kbd">p</kbd>
+          </div>
+          <div class="flex justify-center gap-1 my-1 w-full">
+            <kbd id="a" class="kbd">a</kbd>
+            <kbd id="s" class="kbd">s</kbd>
+            <kbd id="d" class="kbd">d</kbd>
+            <kbd id="f" class="kbd">f</kbd>
+            <kbd id="g" class="kbd">g</kbd>
+            <kbd id="h" class="kbd">h</kbd>
+            <kbd id="j" class="kbd">j</kbd>
+            <kbd id="k" class="kbd">k</kbd>
+            <kbd id="l" class="kbd">l</kbd>
+          </div>
+          <div class="flex justify-center gap-1 my-1 w-full">
+            <kbd id="z" class="kbd">z</kbd>
+            <kbd id="x" class="kbd">x</kbd>
+            <kbd id="c" class="kbd">c</kbd>
+            <kbd id="v" class="kbd">v</kbd>
+            <kbd id="b" class="kbd">b</kbd>
+            <kbd id="n" class="kbd">n</kbd>
+            <kbd id="m" class="kbd">m</kbd>
+            <kbd id="/" class="kbd">/</kbd>
+          </div>
+        </div>
+        <!-- keyboard ends -->
+        <!-- life score -->
+        <div class="flex justify-between mx-44">
+          <button class="btn btn-active btn-neutral bg-[#894189] rounded-full">
+            Life <span><img src="images/Group 23.svg" alt="" /></span>1
+          </button>
+          <button class="btn btn-active btn-neutral bg-[#360490] rounded-full">
+            Score<span><img src="images/monetization_on.svg" alt="" /></span>1
+          </button>
+        </div>
+      </section>
+      <!-- section Score number 03 -->
+      <section
+        class="flex flex-col justify-center items-center min-h-screen hidden"
+      >
+        <div
+          class="flex flex-col justify-center gap-4 items-center font-poppins bg-[#ffffff33] p-6 rounded-2xl"
+        >
+          <h1 class="text-5xl font-bold text-white font-poppins">Score : 14</h1>
+          <button class="btn text-black font-bold text-[18px] font-poppins">
+            Play Again
+          </button>
+          <p class="font-medium text-[16px] text-white">
+            Practice will make you Pro
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="Script/AlphaClash.js"></script>
+    <script src="Script/connected.js"></script>
+  </body>
+</html>
