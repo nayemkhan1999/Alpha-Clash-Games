@@ -13,6 +13,11 @@ function setBackgroundColor(elementId){
     const element = document.getElementById(elementId);
     element.classList.add('bg-amber-500')
 }
+//  Remove Background color 
+function removeBackgroundColor (elementId){
+    const element = document.getElementById(elementId);
+    element.classList.remove('bg-amber-500')
+}
  // get A Random Alphabet create a function
 
  function getARandomAlphabet(){
