@@ -1,6 +1,9 @@
 function keyBoardConnectedToPress(e){
     const playerPress = e.key;
-
+    // stop the game if you press the (Esc) Button
+    if(playerPress === 'Escape'){
+        gameOver()
+    }
     // get the expected Alphabet
     const displayAlphabet = document.getElementById('Display')
     const displayWord = displayAlphabet.innerText;
@@ -14,8 +17,6 @@ function keyBoardConnectedToPress(e){
         const updatedScore = currentScore + 1;
         setTextElementValueById('current-score',updatedScore)
        
-        // const newScore = convertToParseInt + 1;
-    
         removeBackgroundColor(playerPress)
         continueGameLoop();   
     }else{
