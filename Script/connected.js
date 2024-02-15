@@ -1,6 +1,5 @@
 function keyBoardConnectedToPress(e){
     const playerPress = e.key;
-    console.log('player press the button',playerPress)
 
     // get the expected Alphabet
     const displayAlphabet = document.getElementById('Display')
@@ -10,22 +9,24 @@ function keyBoardConnectedToPress(e){
 
     //check Right or Wrong keypress
     if(playerPress === convertToLowerCase){
-        console.log('you got a point')
-        //Update Score:
-        //1. get the current score
-        const currentScore = document.getElementById('current-score');
-        const currentInnerText = currentScore.innerText;
-        const convertToParseInt = parseInt(currentInnerText);
-        console.log(convertToParseInt)
-        //2. increase the score by 1
-        const newScore = convertToParseInt + 1;
-        //3. show the update score
-        currentScore.innerText = newScore
-        //4. start a new round
+
+        const currentScore = getTextElementById('current-score')
+        const updatedScore = currentScore + 1;
+        setTextElementValueById('current-score',updatedScore)
+       
+        // const newScore = convertToParseInt + 1;
+    
         removeBackgroundColor(playerPress)
-        continueGameLoop();
+        continueGameLoop();   
     }else{
-        console.log('your life is date')
+
+        const currentLife = getTextElementById('current-life');
+        const updatedLife = currentLife - 1;
+        setTextElementValueById('current-life',updatedLife)
+  
+        if(updatedLife === 0){ 
+            gameOver()
+        }
     }
 }
 // Above the function name call function on the function make put on the call function name like (keyBoardConnectedToPress) !!
@@ -43,8 +44,28 @@ function continueGameLoop(){
 }
 
 function play(){
+    //Hide everything show only the play-Ground
     hideElementById('home-screen')
+    hideElementById('final-score')
     showElementById('play-ground')
-    continueGameLoop()
+    // reset score and life
+    setTextElementValueById('current-life', 5)
+    setTextElementValueById('current-score', 0)
+    
+    continueGameLoop()  
   
+}
+
+function gameOver(){
+    hideElementById('play-ground')
+    showElementById('final-score')
+    //updated final score
+    //1. get the final score
+    const lastScore = getTextElementById('current-score')
+    console.log(lastScore)
+    setTextElementValueById('last-score',lastScore)
+
+    // clear the last selected alphabet remove color
+    const currentAlphabet = getTextColorRemoveById('Display')
+    removeBackgroundColor(currentAlphabet);
 }

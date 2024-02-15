@@ -93,25 +93,36 @@
         <div class="flex justify-between mx-44">
           <!-- life button -->
           <button class="btn btn-active btn-neutral bg-[#894189] rounded-full">
-            Life <span><img src="images/Group 23.svg" alt="" /></span>1
+            Life <img src="images/Group 23.svg" alt="" /><span id="current-life"
+              >5</span
+            >
           </button>
           <!-- score button -->
           <button class="btn btn-active btn-neutral bg-[#360490] rounded-full">
             Score
             <img src="images/monetization_on.svg" alt="" />
-            <span id="current-score">1</span>
+            <span id="current-score" class="text-xl font-medium">0</span>
           </button>
         </div>
       </section>
       <!-- section Score number 03 -->
       <section
+        id="final-score"
         class="flex flex-col justify-center items-center min-h-screen hidden"
       >
         <div
           class="flex flex-col justify-center gap-4 items-center font-poppins bg-[#ffffff33] p-6 rounded-2xl"
         >
-          <h1 class="text-5xl font-bold text-white font-poppins">Score : 14</h1>
-          <button class="btn text-black font-bold text-[18px] font-poppins">
+          <h1 class="text-amber-500 font-bold font-poppins text-2xl">
+            Game Over&#128553;
+          </h1>
+          <h1 class="text-5xl font-bold text-white font-poppins">
+            Score :<span id="last-score">14</span>
+          </h1>
+          <button
+            class="btn text-black font-bold text-[18px] font-poppins"
+            onclick="play()"
+          >
             Play Again
           </button>
           <p class="font-medium text-[16px] text-white">
